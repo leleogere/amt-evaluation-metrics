@@ -1,0 +1,29 @@
+[project]
+name = "amt-metrics-evaluation"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "black>=26.5.1",
+    "click>=8.4.2",
+    "matplotlib>=3.11.0",
+    "music21>=10.5.0",
+    "music21b",
+    "muster",
+    "numba>=0.65.1",
+    "pandas>=3.0.3",
+    "pandas-stubs~=3.0.3",
+    "pretty-midi>=0.2.11",
+    "setuptools>=82.0.1",
+    "tikzplotlib>=0.10.1",
+    "tqdm>=4.68.3",
+]
+
+[tool.uv.sources]
+muster = { git = "https://github.com/TimFelixBeyer/amtevaluation.github.io.git" }
+music21b = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    "music21b",
+]
