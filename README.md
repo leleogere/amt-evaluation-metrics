@@ -76,3 +76,5 @@ MV2H does not use `music21` so it won't make a difference.
 ```bash
 uv run python main.py "$HOME/datasets/asap-dataset-transcribed" -m MUnc --score-file-pattern "^original.musicxml$" --transcription-file-pattern "^transcription.musicxml$"
 ```
+
+Note: the transcription file is searched in the same folder as the source file.
