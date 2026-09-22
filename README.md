@@ -61,10 +61,10 @@ uv run python main.py "$HOME/datasets/asap-dataset" -m MUnc --score-file-pattern
 ```
 
 The available metrics `-m` are:
-  - `MUc`: MUSTER with `clean_scores=True` (only used for Beyer's version, when `-b` is passed, else identical to `MUnc`)
-  - `MUnc`: MUSTER with `clean_scores=False` (only used for Beyer's version, when `-b` is passed, else identical to `MUc`)
-  - `SS`: ScoreSimilarity (Suzuki's version)
-  - `SSb`: ScoreSimilarity (Beyer's version, only use with `-b` to also get the Beyer's version of `music21`)
+  - `MUc`: MUSTER with `clean_scores=True` (only used for Beyer's version, i.e. when `-b` is passed, else identical to `MUnc`)
+  - `MUnc`: MUSTER with `clean_scores=False` (only used for Beyer's version, i.e. when `-b` is passed, else identical to `MUc`)
+  - `SS`: ScoreSimilarity (Suzuki's version, only use *without* `-b` to *not* load Beyer's version of `music21`)
+  - `SSb`: ScoreSimilarity (Beyer's version, only use *with* `-b` to also load Beyer's version of `music21`)
   - `MV2H`: MV2H
 
 The flag `-b` load the Beyer's version of the library `music21`.
