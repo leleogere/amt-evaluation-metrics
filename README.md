@@ -5,10 +5,8 @@ This repository contains some script to evaluate three popular Automatic Music T
 ## Metrics included
 
 Note that some metrics are implemented differently by different papers.
-  - MUSTER
-    - Both [original version](https://github.com/amtevaluation/amtevaluation.github.io) and [Beyer version](https://github.com/TimFelixBeyer/amtevaluation.github.io)
-  - ScoreSimilarity
-    - Both [Suzuki version](https://github.com/suzuqn/ScoreTransformer) and [Beyer version](https://github.com/TimFelixBeyer/ScoreTransformer)
+  - MUSTER (both [original version](https://github.com/amtevaluation/amtevaluation.github.io) and [Beyer's version](https://github.com/TimFelixBeyer/amtevaluation.github.io))
+  - ScoreSimilarity (both [Suzuki's version](https://github.com/suzuqn/ScoreTransformer) and [Beyer's version](https://github.com/TimFelixBeyer/ScoreTransformer))
   - MV2H ([McLeod](https://github.com/apmcleod/MV2H))
 
 Due to issues in different versions, some unusual tricks are required to ensure that the correct version of each metric and its dependencies.
