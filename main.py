@@ -23,33 +23,6 @@ pd.set_option("display.max_rows", None)
 pd.set_option("display.width", 10000)
 
 
-def compute_metric(
-    metric: Callable[[Path, Path], dict[str, float | None]],
-    scores: list[Path],
-    n_jobs: int = 1,
-) -> list[dict]:
-    if n_jobs == 1:
-        metrics = [metric(xml_score, xml_score) for xml_score in tqdm(scores)]
-    else:
-        metrics = [
-            m
-            for m in tqdm(
-                joblib.Parallel(n_jobs=n_jobs, return_as="generator", backend="threading")(
-                    joblib.delayed(metric)(xml_score, xml_score) for xml_score in scores
-                ),
-                total=len(scores),
-            )
-        ]
-    return metrics
-
-
-prefix_to_metric = {
-    m.prefix(): m
-    for m in [MusterClean, MusterNotClean, ScoreSimilarity, ScoreSimilarityBeyer, MV2H]
-}
-print(prefix_to_metric)
-
-
 # fmt: off
 @click.command()
 @click.argument("dataset_path", type=click.Path(exists=True, readable=True, path_type=Path))
