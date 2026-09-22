@@ -78,3 +78,11 @@ uv run python main.py "$HOME/datasets/asap-dataset-transcribed" -m MUnc --score-
 ```
 
 Note: the transcription file is searched in the same folder as the source file.
+
+## Insights
+
+Analyzing those three metrics reveals some interesting and unwanted behavior, raising questions about their usage in evaluating real AMT systems.
+The full results are presented in my PhD thesis (*link to come*), but the main messages are the following:
+  - MUSTER: obtains non-zero error rates in self-comparison setup
+  - ScoreSimilarity: shows some submetrics inversely correlated (worse transcription -> worse alignment -> some submetrics increase??)
+  - MV2H: not robust when the transcription quality is too low
